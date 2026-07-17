@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Semantic color tokens (RGB triplets so Tailwind can apply alpha).
+  Light theme is the default; `.dark` on <html> switches to dark.
+  Both palettes are tuned for WCAG AA contrast on their surfaces.
+*/
+:root {
+  --canvas: 248 250 252;        /* slate-50 — clean, airy base */
+  --panel: 255 255 255;
+  --inset: 241 245 249;         /* slate-100 */
+  --chip: 226 232 240;          /* slate-200 */
+  --line: 203 213 225;          /* slate-300 */
+  --ink: 2 6 23;                /* slate-950 — strong heading contrast */
+  --body: 51 65 85;             /* slate-700 */
+  --muted: 71 85 105;           /* slate-600 */
+  --primary: 4 120 87;          /* emerald-700 — 5:1 on white */
+  --primary-strong: 6 95 70;    /* emerald-800 */
+  --on-primary: 255 255 255;
+  --secondary: 3 105 161;       /* sky-700 */
+  --shadow: 15 23 42;
+
+  color: rgb(var(--ink));
+  background: rgb(var(--canvas));
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark {
+  --canvas: 2 6 23;             /* slate-950 — deep base, cards pop */
+  --panel: 15 23 42;            /* slate-900 */
+  --inset: 8 13 33;             /* between slate-950 and 900 */
+  --chip: 30 41 59;             /* slate-800 */
+  --line: 51 65 85;             /* slate-700 — visible borders */
+  --ink: 248 250 252;           /* slate-50 */
+  --body: 214 222 235;          /* slightly brighter than slate-300 */
+  --muted: 155 170 190;         /* brighter than slate-400 for AA contrast */
+  --primary: 52 211 153;        /* emerald-400 — vivid on deep navy */
+  --primary-strong: 110 231 183; /* emerald-300 */
+  --on-primary: 2 44 34;        /* emerald-950 */
+  --secondary: 56 189 248;      /* sky-400 */
+  --shadow: 0 0 0;
+
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+  background: rgb(var(--canvas));
+  color: rgb(var(--ink));
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: rgb(var(--on-primary));
+  background: rgb(var(--primary));
+}
+
+.noise {
+  background-image:
+    linear-gradient(rgb(var(--ink) / 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--ink) / 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.glass {
+  background: linear-gradient(145deg, rgb(var(--panel) / 0.92), rgb(var(--panel) / 0.7));
+  backdrop-filter: blur(22px);
+}
+
+.gradient-border {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(rgb(var(--panel)), rgb(var(--panel))) padding-box,
+    linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary))) border-box;
+}
+
+.button-glow:hover {
+  box-shadow: 0 0 28px rgb(var(--primary) / 0.3);
+}
+
+/* Floating gradient orbs — soft ambient background visuals for both themes */
+.orb {
+  position: fixed;
+  z-index: -10;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  animation: drift 20s ease-in-out infinite alternate;
+}
+
+.orb-1 {
+  top: -10%;
+  left: -8%;
+  height: 34rem;
+  width: 34rem;
+  background: rgb(var(--primary) / 0.16);
+}
+
+.orb-2 {
+  top: 20%;
+  right: -12%;
+  height: 30rem;
+  width: 30rem;
+  background: rgb(var(--secondary) / 0.14);
+  animation-delay: -7s;
+  animation-duration: 26s;
+}
+
+.orb-3 {
+  bottom: -14%;
+  left: 30%;
+  height: 32rem;
+  width: 32rem;
+  background: rgb(var(--primary) / 0.1);
+  animation-delay: -13s;
+  animation-duration: 32s;
+}
+
+@keyframes drift {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(3rem, -2.5rem) scale(1.18);
+  }
+}
+
+.blinking-cursor {
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 44rem;
+  width: 44rem;
+  margin: -22rem 0 0 -22rem;
+  border-radius: 9999px;
+  border: 1px solid rgb(var(--primary) / 0.35);
+  opacity: 0;
+  animation: pulse-ring 4.5s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.15);
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.reveal {
+  animation: reveal 700ms ease both;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}
