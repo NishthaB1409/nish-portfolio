@@ -3,7 +3,11 @@ export const contact = {
   email: "nishthabhagyawant@gmail.com",
   github: "https://github.com/NishthaB1409",
   linkedin: "https://www.linkedin.com/in/nishtha-bhagyawant-507b721b9/",
-  formspree: "https://formspree.io/f/xvzvqzgl"
+  formspree: "https://formspree.io/f/xvzvqzgl",
+  // Google Drive "view" link — opens the resume where anyone can preview/download it.
+  resumeUrl: "https://drive.google.com/file/d/1NX2UG2XMPwVJjhLmMwo6jfNiKNeVh1tf/view?usp=sharing",
+  // Direct-download form of the same file.
+  resumeDownloadUrl: "https://drive.google.com/uc?export=download&id=1NX2UG2XMPwVJjhLmMwo6jfNiKNeVh1tf"
 };
 
 const projectLinks = {
@@ -278,6 +282,94 @@ const en = {
     rights: "All rights reserved.",
     privacy: "Privacy Policy",
     terms: "Terms of Service"
+  },
+  chat: {
+    launcher: "Chat with Nish",
+    title: "Nish",
+    subtitle: "Nishtha's AI assistant",
+    greeting:
+      "Hi! I'm Nish, Nishtha's AI assistant. 👋 Ask me about her skills, projects, experience, or how to get in touch.",
+    placeholder: "Ask me anything…",
+    suggestionsLabel: "Try asking:",
+    suggestions: ["Skills", "Projects", "Experience", "Resume", "Contact"],
+    fallback:
+      "I'm not sure about that one 🤔. Try asking about Nishtha's skills, projects, experience, education, resume, or contact details.",
+    intents: [
+      {
+        keywords: ["hi", "hello", "hey", "hallo", "yo", "greetings", "sup"],
+        answer: "Hey there! 👋 I'm Nish. Want to hear about Nishtha's skills, projects, experience, or how to reach her?"
+      },
+      {
+        keywords: ["who", "about", "yourself", "nishtha", "background", "tell me"],
+        answer:
+          "Nishtha Bhagyawant is an AI/ML Engineer and M.Sc. Web Engineering student at TU Chemnitz. She specializes in LLMs, RAG pipelines, agentic AI, and production-ready APIs, with hands-on experience building ML solutions at LTI - Larsen & Toubro Infotech."
+      },
+      {
+        keywords: [
+          "werkstudent",
+          "working student",
+          "good fit",
+          "fit for",
+          "suitable",
+          "hire",
+          "hiring",
+          "candidate",
+          "available",
+          "availability",
+          "open to",
+          "recruit",
+          "why should",
+          "strength",
+          "right person",
+          "looking for"
+        ],
+        answer:
+          "Yes — Nishtha is actively seeking Werkstudent, internship, and AI/ML engineering roles in Germany. She brings production ML experience from LTI, an in-progress M.Sc. at TU Chemnitz, and hands-on work in RAG, LLMs and agentic AI, making her a strong fit for applied-AI and AI-engineering positions. The best next step is to reach her at nishthabhagyawant@gmail.com or via the contact form below."
+      },
+      {
+        keywords: ["skill", "tech", "stack", "technolog", "tool", "know", "language", "framework"],
+        answer:
+          "Her stack spans Applied AI/LLMs (GPT, Claude, Qwen, prompt engineering, fine-tuning), AI agents (LangChain, LangGraph, CrewAI, MCP), RAG & vector DBs (Qdrant, Pinecone, LlamaIndex), plus Python, FastAPI, PyTorch, AWS and Docker. Scroll to the Skills section for the full picture!"
+      },
+      {
+        keywords: ["project", "work on", "built", "build", "portfolio", "made", "demo", "showcase"],
+        answer:
+          "Featured projects: a Production-Ready RAG AI Agent, a Multi-Agent AI Research System, a Smart Energy Companion, a Repository Analysis Tool, and an AI Log Analysis System. Each has live demo + GitHub links in the Projects section!"
+      },
+      {
+        keywords: ["experience", "job", "career", "lti", "company", "worked", "internship", "exposys"],
+        answer:
+          "Nishtha worked as a Software Developer (AI/ML) at LTI - Larsen & Toubro Infotech, building ML/NLP pipelines and RAG systems with LangChain. She also interned as a Data Scientist at Exposys Data Labs. See the Experience section for details."
+      },
+      {
+        keywords: ["education", "study", "studies", "university", "degree", "chemnitz", "academic", "research", "publication"],
+        answer:
+          "She's pursuing an M.Sc. in Web Engineering at TU Chemnitz, Germany, and holds a B.E. in Computer Science. She also published research on sign language recognition using image processing (IJSCE 2025)."
+      },
+      {
+        keywords: ["resume", "cv", "download resume"],
+        answer:
+          "You can grab Nishtha's resume here: https://drive.google.com/file/d/1NX2UG2XMPwVJjhLmMwo6jfNiKNeVh1tf/view?usp=sharing — or use the “Download Resume” button at the top of the page."
+      },
+      {
+        keywords: ["contact", "email", "reach", "hire", "connect", "touch", "mail", "linkedin", "github"],
+        answer:
+          "Reach Nishtha at nishthabhagyawant@gmail.com, or connect via the LinkedIn/GitHub icons in the footer. There's also a contact form in the Contact section!"
+      },
+      {
+        keywords: ["location", "where", "based", "live", "city", "country", "germany"],
+        answer: "Nishtha is based in Chemnitz, Germany. 🇩🇪"
+      },
+      {
+        keywords: ["rag", "agent", "agentic", "llm", "generative", "genai", "vector"],
+        answer:
+          "Agentic AI and RAG are Nishtha's core focus! She's built multi-agent systems with LangChain/LangGraph and production RAG pipelines using vector databases like Qdrant. The Projects and Skills sections dive into this."
+      },
+      {
+        keywords: ["thank", "thanks", "appreciate", "great", "cool", "awesome", "nice"],
+        answer: "You're welcome! 😊 Anything else you'd like to know about Nishtha?"
+      }
+    ]
   }
 };
 
@@ -531,6 +623,93 @@ const de = {
     rights: "Alle Rechte vorbehalten.",
     privacy: "Datenschutz",
     terms: "Nutzungsbedingungen"
+  },
+  chat: {
+    launcher: "Mit Nish chatten",
+    title: "Nish",
+    subtitle: "Nishthas KI-Assistent",
+    greeting:
+      "Hallo! Ich bin Nish, Nishthas KI-Assistent. 👋 Frag mich nach ihren Kenntnissen, Projekten, Erfahrungen oder wie du sie erreichst.",
+    placeholder: "Frag mich etwas…",
+    suggestionsLabel: "Frag zum Beispiel:",
+    suggestions: ["Kenntnisse", "Projekte", "Erfahrung", "Lebenslauf", "Kontakt"],
+    fallback:
+      "Das weiß ich nicht genau 🤔. Frag mich nach Nishthas Kenntnissen, Projekten, Erfahrung, Ausbildung, Lebenslauf oder Kontaktdaten.",
+    intents: [
+      {
+        keywords: ["hi", "hallo", "hey", "servus", "moin", "guten"],
+        answer: "Hallo! 👋 Ich bin Nish. Möchtest du etwas über Nishthas Kenntnisse, Projekte, Erfahrung oder Kontakt erfahren?"
+      },
+      {
+        keywords: ["wer", "über", "nishtha", "hintergrund", "erzähl"],
+        answer:
+          "Nishtha Bhagyawant ist AI/ML Engineer und M.Sc.-Studentin für Web Engineering an der TU Chemnitz. Sie ist auf LLMs, RAG-Pipelines, agentische KI und produktionsreife APIs spezialisiert – mit Praxiserfahrung bei LTI - Larsen & Toubro Infotech."
+      },
+      {
+        keywords: [
+          "werkstudent",
+          "werkstudentin",
+          "passt",
+          "geeignet",
+          "einstellen",
+          "einstellung",
+          "kandidat",
+          "verfügbar",
+          "verfügbarkeit",
+          "offen für",
+          "warum sollte",
+          "stärke",
+          "die richtige",
+          "sucht",
+          "gute wahl"
+        ],
+        answer:
+          "Ja – Nishtha sucht aktiv Werkstudenten-, Praktikums- und AI/ML-Engineering-Stellen in Deutschland. Sie bringt Produktions-ML-Erfahrung von LTI, ein laufendes M.Sc.-Studium an der TU Chemnitz sowie Praxis in RAG, LLMs und agentischer KI mit – ideal für Applied-AI- und AI-Engineering-Rollen. Am besten erreichst du sie unter nishthabhagyawant@gmail.com oder über das Kontaktformular unten."
+      },
+      {
+        keywords: ["kenntnis", "fähigkeit", "tech", "stack", "technolog", "werkzeug", "sprache", "framework", "skill"],
+        answer:
+          "Ihr Stack umfasst Applied AI/LLMs (GPT, Claude, Qwen, Prompt Engineering, Fine-Tuning), KI-Agenten (LangChain, LangGraph, CrewAI, MCP), RAG & Vektordatenbanken (Qdrant, Pinecone, LlamaIndex) sowie Python, FastAPI, PyTorch, AWS und Docker. Mehr im Bereich Kenntnisse!"
+      },
+      {
+        keywords: ["projekt", "gebaut", "portfolio", "demo", "arbeit"],
+        answer:
+          "Ausgewählte Projekte: ein produktionsreifer RAG-KI-Agent, ein Multi-Agent AI Research System, ein Smart Energy Companion, ein Repository-Analyse-Tool und ein KI-Log-Analyse-System. Jeweils mit Live-Demo + GitHub im Bereich Projekte!"
+      },
+      {
+        keywords: ["erfahrung", "job", "karriere", "lti", "unternehmen", "gearbeitet", "praktikum", "exposys"],
+        answer:
+          "Nishtha war Software Developer (AI/ML) bei LTI - Larsen & Toubro Infotech und hat ML-/NLP-Pipelines sowie RAG-Systeme mit LangChain entwickelt. Außerdem war sie Data-Science-Praktikantin bei Exposys Data Labs. Details im Bereich Erfahrung."
+      },
+      {
+        keywords: ["ausbildung", "studium", "studier", "universität", "abschluss", "chemnitz", "forschung", "publikation"],
+        answer:
+          "Sie absolviert einen M.Sc. Web Engineering an der TU Chemnitz und hat einen B.E. in Informatik. Zudem hat sie Forschung zur Gebärdensprach-Erkennung mittels Bildverarbeitung veröffentlicht (IJSCE 2025)."
+      },
+      {
+        keywords: ["lebenslauf", "resume", "cv", "herunterladen"],
+        answer:
+          "Nishthas Lebenslauf findest du hier: https://drive.google.com/file/d/1NX2UG2XMPwVJjhLmMwo6jfNiKNeVh1tf/view?usp=sharing – oder über den Button „Lebenslauf herunterladen“ oben auf der Seite."
+      },
+      {
+        keywords: ["kontakt", "email", "e-mail", "erreichen", "einstellen", "verbinden", "linkedin", "github"],
+        answer:
+          "Du erreichst Nishtha unter nishthabhagyawant@gmail.com oder über die LinkedIn-/GitHub-Icons im Footer. Es gibt außerdem ein Kontaktformular im Bereich Kontakt!"
+      },
+      {
+        keywords: ["ort", "wo", "standort", "wohnt", "stadt", "land", "deutschland"],
+        answer: "Nishtha lebt in Chemnitz, Deutschland. 🇩🇪"
+      },
+      {
+        keywords: ["rag", "agent", "agentisch", "llm", "generativ", "genai", "vektor"],
+        answer:
+          "Agentische KI und RAG sind Nishthas Schwerpunkt! Sie hat Multi-Agenten-Systeme mit LangChain/LangGraph und produktionsreife RAG-Pipelines mit Vektordatenbanken wie Qdrant gebaut. Mehr in den Bereichen Projekte und Kenntnisse."
+      },
+      {
+        keywords: ["danke", "super", "toll", "cool", "prima", "klasse"],
+        answer: "Gern geschehen! 😊 Möchtest du noch etwas über Nishtha wissen?"
+      }
+    ]
   }
 };
 

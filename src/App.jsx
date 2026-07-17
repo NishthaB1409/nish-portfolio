@@ -5,6 +5,7 @@ import { Education } from "./sections/Education";
 import { Experience } from "./sections/Experience";
 import { Expertise } from "./sections/Expertise";
 import { Hero } from "./sections/Hero";
+import { Chatbot } from "./components/Chatbot";
 import { Navbar } from "./sections/Navbar";
 import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
@@ -83,6 +84,8 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      <Chatbot />
     </div>
   );
 }

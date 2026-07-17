@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../components/Button";
+import { contact } from "../data/content";
 import { useLanguage } from "../context/LanguageContext";
 
 function Typewriter({ phrases, highlight }) {
@@ -93,8 +94,9 @@ export function Hero() {
           <Button href="#contact">{t.hero.ctaHire}</Button>
           <Button href="#projects" variant="secondary">{t.hero.ctaWork}</Button>
           <a
-            href="/nishtha_resume.pdf"
-            download
+            href={contact.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex min-h-12 items-center justify-center rounded-full border border-line bg-panel/80 px-6 py-3 text-sm font-bold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-chip/60"
           >
             {t.hero.ctaResume}
